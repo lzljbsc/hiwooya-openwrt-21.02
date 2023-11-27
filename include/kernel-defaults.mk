@@ -42,7 +42,8 @@ else
 	if [ -d $(LINUX_DIR) ]; then \
 		rmdir $(LINUX_DIR); \
 	fi
-	ln -s $(CONFIG_EXTERNAL_KERNEL_TREE) $(LINUX_DIR)
+	# ln -s $(CONFIG_EXTERNAL_KERNEL_TREE) $(LINUX_DIR)
+	cp -R $(CONFIG_EXTERNAL_KERNEL_TREE) $(LINUX_DIR)
 	if [ -d $(LINUX_DIR)/user_headers ]; then \
 		rm -rf $(LINUX_DIR)/user_headers; \
 	fi
